@@ -139,14 +139,6 @@
             "description": "status of the paper",
             "required": false,
             "type": "string"
-          },
-          {
-            "name": "curated_id",
-            "in": "query",
-            "description": "full text for the paper",
-            "required": false,
-            "type": "integer",
-            "format": "id"
           }
         ],
         "responses": {
@@ -383,14 +375,14 @@
           {
             "name": "body",
             "in": "query",
-            "description": "full text for the paper",
+            "description": "body of the paper",
             "required": false,
             "type": "string"
           },
           {
             "name": "footer",
             "in": "query",
-            "description": "curated id the paper originated from",
+            "description": "footer of the paper",
             "required": false,
             "type": "string"
           },
@@ -400,14 +392,6 @@
             "description": "status of the paper",
             "required": false,
             "type": "string"
-          },
-          {
-            "name": "curated_id",
-            "in": "query",
-            "description": "full text for the paper",
-            "required": false,
-            "type": "integer",
-            "format": "id"
           },
           {
             "name": "build_page",
@@ -790,11 +774,6 @@
         "status": {
           "description": "status of the paper",
           "type": "string"
-        },
-        "curated_id": {
-          "description": "curated id the paper originated from",
-          "type": "integer",
-          "format": "id"
         },
         "build_page": {
           "description": "Whether or not this paper post will show on any site",
