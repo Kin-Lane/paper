@@ -1,7 +1,7 @@
 {
   "name": "Kin Lane - Paper",
   "description": "This is my default paper API, using it to manage posts in a single API. It is a Stack Network API resource, with supporting docker container for the API.",
-  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-paper-icon.png",
+  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-paper.png",
   "tags": [
     "Application Programming Interface",
     "API",
@@ -15,7 +15,7 @@
     {
       "name": "Paper",
       "description": "A paper API resource.",
-      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-paper-icon.png",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-paper.png",
       "humanURL": "https://kin-lane.github.io/paper/",
       "baseURL": "http://paper.api.kinlane.com",
       "tags": [
