@@ -157,122 +157,6 @@
         ]
       }
     },
-    "/paper/published/": {
-      "get": {
-        "summary": "published papers",
-        "description": "published papers",
-        "operationId": "getPublishedPapers",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the paper",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the paper",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "which page of results to show",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "count",
-            "in": "query",
-            "description": "how many to show on page",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "which field to sort by",
-            "required": false,
-            "type": "string"
-          }          
-        ],
-        "responses": {
-          "200": {
-            "description": "Paper Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/paper"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Paper"
-        ]
-      }
-    },
-    "/paper/draft/": {
-      "get": {
-        "summary": "draft papers",
-        "description": "draft papers",
-        "operationId": "getDraftPapers",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the paper",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the paper",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "which page of results to show",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "count",
-            "in": "query",
-            "description": "how many to show on page",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "which field to sort by",
-            "required": false,
-            "type": "string"
-          }          
-        ],
-        "responses": {
-          "200": {
-            "description": "paper response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/paper"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Paper"
-        ]
-      }
-    },
     "/paper/{paper_id}/": {
       "get": {
         "summary": "Retrieve a paper using its slug",
@@ -613,11 +497,11 @@
         ]
       }
     },
-    "/paper/tags/byweek/": {
-      "get": {
-        "summary": "paper tags by week",
-        "description": "paper tags by week",
-        "operationId": "getPaperTagsByWeek",
+    "/paper/component/": {
+      "post": {
+        "summary": "add paper component",
+        "description": "add paper component",
+        "operationId": "addPaperComponent",
         "parameters": [
           {
             "name": "appid",
@@ -632,21 +516,35 @@
             "description": "your appkey for accessing the paper",
             "required": true,
             "type": "string"
-          },        
+          },
           {
-            "name": "week",
-            "in": "query",
-            "description": "the week to retrieve tags by",
+            "name": "paper_id",
+            "in": "formData",
+            "description": "the id for the paper",
             "required": true,
             "type": "string"
           },
           {
-            "name": "year",
-            "in": "query",
-            "description": "the year to retrieve tags by",
+            "name": "name",
+            "in": "formData",
+            "description": "name of the paper",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "type of paper",
             "required": false,
             "type": "string"
-          }          
+          },
+          {
+            "name": "sort_order",
+            "in": "formData",
+            "description": "sort order for the paper",
+            "required": false,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
@@ -660,34 +558,27 @@
           }
         },
         "tags": [
-          "Tags"
+          "Paper"
         ]
       }
     },
-    "/paper/tags/byweek/{tag}/paper/": {
+    "/paper/{paper_id}/components/": {
       "get": {
-        "summary": "paper tags by week papers",
-        "description":  "paper tags by week papers",
-        "operationId": "getPaperTagCPaper",
+        "summary": "get paper components",
+        "description": "get paper components",
+        "operationId": "getPaperComponent",
         "parameters": [
           {
-            "name": "tag",
+            "name": "paper_id",
             "in": "path",
-            "description": "the tag to filter by",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "week",
-            "in": "query",
-            "description": "the week to filter by, defaults to this week",
+            "description": "the id for the paper",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "Paper Tag BLog Responsee",
+            "description": "Paper Components Response",
             "schema": {
               "type": "array",
               "items": {
@@ -697,15 +588,15 @@
           }
         },
         "tags": [
-          "Tags"
+          "Paper"
         ]
       }
     },
-    "/paper/byweek/": {
+    "/paper/tags/": {
       "get": {
-        "summary": "papers by week",
-        "description": "papers by week",
-        "operationId": "getPapersByWeek",
+        "summary": "get tags",
+        "description": "get tags",
+        "operationId": "getTags",
         "parameters": [
           {
             "name": "appid",
@@ -724,7 +615,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Paper Response",
+            "description": "paper response",
             "schema": {
               "type": "array",
               "items": {
@@ -734,7 +625,91 @@
           }
         },
         "tags": [
-          "Paper"
+          "Tags"
+        ]
+      },
+      "put": {
+        "summary": "update tag",
+        "description": "update tag",
+        "operationId": "updateTag",
+        "parameters": [
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the paper",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the paper",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "formData",
+            "description": "tag to update",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "paper response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tag"
+        ]
+      },
+      "delete": {
+        "summary": "delete tag",
+        "description": "delete tag",
+        "operationId": "deleteTag",
+        "parameters": [
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "the tag to remove",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the paper",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the paper",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "paper response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/paper"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tag"
         ]
       }
     }
