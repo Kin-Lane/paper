@@ -36,6 +36,7 @@ $app->get($route, function ()  use ($app){
 		$summary = $Database['summary'];
 
 		// manipulation zone
+		$host = $_SERVER['HTTP_HOST'];
 		$paper_id = prepareIdOut($paper_id,$host);
 
 		$F = array();
