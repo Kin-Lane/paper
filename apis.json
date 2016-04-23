@@ -1,30 +1,26 @@
-[{
-	"name": "Curated API",
+{
+	"name": "Paper API",
 	"description": "As I look through the thousands of tweets, blog posts, and other items I read from across the API space, I curate them as part of my regular research. I put them into each research bucket, and make them availble via each reserch project. You can access via this API, and use in real-time as I curate and manage each week.",
 	"image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-abundance.png",
 	"x-open-ranking": "0",
-	"tags": ["Kin Lane Curated APi"],
+	"tags": ["Kin Lane Paper APi"],
 	"created": "2016-04-04",
 	"modified": "2016-04-04",
-	"url": "https://kin-lane.github.io/curated/"
+	"url": "https://kin-lane.github.io/paper/",
 	"specificationVersion": "0.14",
 	"apis": [{
-		"name": "Kin Lane Curated",
+		"name": "Kin Lane Paper",
 		"description": "<p>As I look through the thousands of tweets, blog posts, and other items I read from across the API space, I curate them as part of my regular research. I put them into each research bucket, and make them availble via each reserch project. You can access via this API, and use in real-time as I curate and manage each week.</p>",
 		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png",
-		"humanURL": "https://kin-lane.github.io/curated/",
-		"baseURL": "https://kin-lane.github.io/curated/",
-		"tags": ["Kin Lane Curated APi"],
+		"humanURL": "https://kin-lane.github.io/paper/",
+		"baseURL": "https://kin-lane.github.io/paper/",
+		"tags": ["Kin Lane Paper APi"],
 		"properties": [{
 			"type": "x-openapi-spec",
 			"url": "api-commons/openapi-spec.json"
 		}]
 	}],
 	"x-common": [{
-		"type": "x-blog-rss-feed",
-		"url": "http://www.talkwalker.com/alerts/rss/NG2GCZBIIN4ULOCFJRSUK6EIY2AZLCE2YTABNE6EHW4OAA2B53FA%3D%3D%3D%3D"
-	},
-	{
 		"type": "x-authentication-overview",
 		"url": "authentication/"
 	},
@@ -110,11 +106,11 @@
 	}],
 	"include": [{
 		"name": "Parent",
-		"url": "https://kin-lane.github.io/curated//apis.yaml"
+		"url": "https://kin-lane.github.io/paper//apis.yaml"
 	}],
 	"maintainers": [{
 		"FN": "Kin Lane",
 		"x-twitter": "apievangelist",
 		"email": "info@apievangelist.com"
 	}]
-}]
+}
